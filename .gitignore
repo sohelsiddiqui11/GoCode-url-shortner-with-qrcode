@@ -1,0 +1,18 @@
+
+# Dependencies
+# This is the most important folder to ignore.
+# It contains all the packages from npm.
+/node_modules
+
+# Secrets
+# This file has your database password. NEVER commit it!
+.env
+
+# Log Files
+# Any file ending in .log
+*.log
+npm-debug.log*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
