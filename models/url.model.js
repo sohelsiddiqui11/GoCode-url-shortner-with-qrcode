@@ -33,4 +33,13 @@ const getLongUrl = async(shortCode)=>{
       }
 };
 
-module.exports = {saveUrl,getLongUrl};
+const incrementClickCount = async(shortCode)=>{
+    const sql = 'UPDATE urls SET clicks = clicks + 1 WHERE short_code = ?';
+    try{
+        await db.query(sql,[shortCode]);
+    }catch(err){
+        console.error('Error incrementing click count:',err.message);
+    }
+};
+
+module.exports = {saveUrl,getLongUrl,incrementClickCount};

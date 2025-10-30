@@ -8,7 +8,8 @@ const redirectToLongUrl = async(req,res)=>{
         const longUrl = await urlModel.getLongUrl(shortCode);
 
         if(longUrl){
-            // if we find it redirect the user 
+            // if we find it redirect the user
+            urlModel.incrementClickCount(shortCode); 
             return res.redirect(longUrl);
         }else{
             // if not send page not found error 404
